@@ -4,7 +4,7 @@ public class App {
     public static void main(String[] args) {
         StringCalculator s = new StringCalculator();
 
-        System.out.println(s.add("//[*][%]\\n1*2%3"));
-    }
+        System.out.println(s.add(" "));
 
+    }
 }

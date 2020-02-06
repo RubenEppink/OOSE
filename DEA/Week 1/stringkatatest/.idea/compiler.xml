@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="stringkatatest" target="8" />
+      <module name="stringkatatest" target="13" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -10,26 +10,21 @@ public class StringCalculator {
 
         List<String> numberList;
 
-        if (numbers.equals("")) {
+        if (numbers.isBlank()) {
             return 0;
         }
 
         try {
             numberList = Arrays.stream(numbers.split("\\D+")).collect(Collectors.toList());
-
             numberList.removeIf(i -> i.matches("\\s") || i.matches(""));
-
-
-            numberList.forEach(i -> System.out.println(i));
         } catch (NumberFormatException e) {
-            System.out.println("xd");
             return 0;
         }
 
-        List<Integer>  yolo = numberList.stream().mapToInt(Integer::parseInt).boxed().collect(Collectors.toList());
-        yolo.removeIf(i -> i > 1000);
+        List<Integer> integerLijst = numberList.stream().mapToInt(Integer::parseInt).filter(i -> i <= 1000).boxed().collect(Collectors.toList());
 
-        return yolo.stream()
+
+        return integerLijst.stream()
                 .reduce(0, (a, b) -> a + b);
     }
 }
