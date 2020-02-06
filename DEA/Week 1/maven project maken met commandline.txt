@@ -1,0 +1,2 @@
+mvn archetype:generate -DgroupId=ica.han.oose -DartifactId=workshopStringKata -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+
