@@ -12,7 +12,7 @@ Note that the source code is split into two packages:
  These are the classes intended for inspection and setting breakpoints.
  * `hidden` - A simulated "black box" of utility methods. These classes are not 
  intended for inspection.
- 
+
 Troubleshooting is the art of determining the cause and/or location of a problem. 
 If you have complete, perfect knowledge of the code then there isn't really a need 
 for troubleshooting, as it is trivial to see why something is behaving incorrectly.
@@ -128,8 +128,7 @@ pinpoint errors
 
 * Set breakpoints on exception creation
 
-Although breakpoints allow us a chance to peek inside running code, it is sometimes unclear where to start 
-looking. Many times you'll find yourself replacing breakpoints until you find the correct spot to start 
+Although breakpoints allow us a chance to peek inside running code, it is sometimes unclear where to start looking. Many times you'll find yourself replacing breakpoints until you find the correct spot to start 
 debugging.
 
 Start by opening the ``E2ExceptionCreation`` source and running it. Like the previous exercise, we have a 

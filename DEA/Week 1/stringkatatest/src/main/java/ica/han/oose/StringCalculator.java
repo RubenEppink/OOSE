@@ -15,14 +15,12 @@ public class StringCalculator {
         }
 
         try {
-            numberList = Arrays.stream(numbers.split("\\D+")).collect(Collectors.toList());
-            numberList.removeIf(i -> i.matches("\\s") || i.matches(""));
+            numberList = Arrays.stream(numbers.split("\\D+")).filter(i -> !i.isEmpty()).collect(Collectors.toList());
         } catch (NumberFormatException e) {
             return 0;
         }
 
         List<Integer> integerLijst = numberList.stream().mapToInt(Integer::parseInt).filter(i -> i <= 1000).boxed().collect(Collectors.toList());
-
 
         return integerLijst.stream()
                 .reduce(0, (a, b) -> a + b);

@@ -5,6 +5,5 @@ public class App {
         StringCalculator s = new StringCalculator();
 
         System.out.println(s.add(" "));
-
     }
 }

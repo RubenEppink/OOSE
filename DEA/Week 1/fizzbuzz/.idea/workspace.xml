@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0b053ca-ce99-4862-ada3-9b985efba4c5" name="Default Changelist" comment="" />
+    <list default="true" id="b0b053ca-ce99-4862-ada3-9b985efba4c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/.idea/libraries/core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/MastermindConsole.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/out/production/MastermindConsole/com/company/Mastermind.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MastermindConsole/src/com/company/Mastermind.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ica/han/oose/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ica/han/oose/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Week 2/lambda-introduction.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Week 2/refactoring.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Week 2/stream-api-introduction.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../~$termen.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../excercise-debugging-master/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise-debugging-master/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../excercise-debugging-master/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise-debugging-master/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../excercise-debugging-master/src/main/java/nl/han/ica/dea/debugging/hidden/ObjectMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise-debugging-master/src/main/java/nl/han/ica/dea/debugging/hidden/ObjectMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../excercise-debugging-master/src/main/java/nl/han/ica/dea/debugging/visible/E1BasicBreakpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise-debugging-master/src/main/java/nl/han/ica/dea/debugging/visible/E1BasicBreakpoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fizzbuzz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fizzbuzz.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stringkatatest/src/main/java/ica/han/oose/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../stringkatatest/src/main/java/ica/han/oose/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stringkatatest/src/main/java/ica/han/oose/StringCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../stringkatatest/src/main/java/ica/han/oose/StringCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stringkatatest/src/test/java/ica/han/oose/TestStringCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../stringkatatest/src/test/java/ica/han/oose/TestStringCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stringkatatest/target/classes/ica/han/oose/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../stringkatatest/target/classes/ica/han/oose/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stringkatatest/target/classes/ica/han/oose/StringCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../stringkatatest/target/classes/ica/han/oose/StringCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stringkatatest/target/test-classes/ica/han/oose/TestStringCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../stringkatatest/target/test-classes/ica/han/oose/TestStringCalculator.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -23,9 +60,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/OOSE/DEA/Week 1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -35,6 +73,26 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Desktop\OOSE\DEA\Week 1" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ica.han.oose.App" />
+      <module name="fizzbuzz" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ica.han.oose.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -47,6 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580834649825</updated>
       <workItem from="1580834660919" duration="640000" />
+      <workItem from="1581013062681" duration="1253000" />
     </task>
     <servers />
   </component>
@@ -63,6 +122,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1580835125514" />
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1581013102054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581013102054" />
+    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1581013102054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581013102054" />
+    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1581013102054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581013102054" />
+    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1581013102054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581013102054" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1581013102508">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581013102508" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1581013102507">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1581013102507" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1581013102507">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1581013102507" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1581013102507">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1581013102507" />
     <state x="184" y="0" key="SettingsEditor" timestamp="1580835015913">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

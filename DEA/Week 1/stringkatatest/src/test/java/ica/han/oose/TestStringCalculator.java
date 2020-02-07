@@ -5,8 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestStringCalculator {
-    private StringCalculator sut;
     int testValue;
+    private StringCalculator sut;
 
     @BeforeEach
     public void setup() {
@@ -34,38 +34,43 @@ public class TestStringCalculator {
 
     @Test
     public void testOne() {
-         testValue = sut.add("1");
+        testValue = sut.add("1");
 
         Assertions.assertEquals(testValue, 1);
     }
 
+    @Test
     public void testAddition() {
         testValue = sut.add("1,2");
-
-        Assertions.assertEquals(testValue, 1);
-    }
-
-    public void testNewLine() {
-         testValue = sut.add("1\\n2,3");
-
-        Assertions.assertEquals(testValue, 6);
-    }
-
-    public void testDelimiter() {
-         testValue = sut.add("//;\\n1;2");
 
         Assertions.assertEquals(testValue, 3);
     }
 
+    @Test
+    public void testNewLine() {
+        testValue = sut.add("1\\n2,3");
+
+        Assertions.assertEquals(testValue, 6);
+    }
+
+    @Test
+    public void testDelimiter() {
+        testValue = sut.add("//;\\n1;2");
+
+        Assertions.assertEquals(testValue, 3);
+    }
+
+    @Test
     public void testOverAThousand() {
-         testValue = sut.add("2, 1001");
+        testValue = sut.add("2, 1001");
 
         Assertions.assertEquals(testValue, 2);
 
     }
 
+    @Test
     public void testMultipleDelimiters() {
-         testValue = sut.add("//[***]\\n1***2***3");
+        testValue = sut.add("//[***]\\n1***2***3");
 
         Assertions.assertEquals(testValue, 6);
     }

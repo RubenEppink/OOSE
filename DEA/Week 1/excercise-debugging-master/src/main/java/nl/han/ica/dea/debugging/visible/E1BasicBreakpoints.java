@@ -33,10 +33,7 @@ public class E1BasicBreakpoints {
 	}
 
 	private static Object makeAThing() {
-		final Object o = new Object();
-		System.out.println(o);
-
-		return null;
+		return new Object();
 	}
 
 	private static void printThis(final Object o) {
