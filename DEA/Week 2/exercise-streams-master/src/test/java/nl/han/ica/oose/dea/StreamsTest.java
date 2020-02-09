@@ -38,7 +38,7 @@ class StreamsTest {
         List<String> input = asList("Welcome", "to", "Java", "8", "Streams");
 
         // Test
-        List<String> filteredStrings = streams.filterStringsThanContainOnlyNumerals(input);
+        List<String> filteredStrings = streams.filterStringsThatContainOnlyNumerals(input);
 
         // Verify
         assertThat(filteredStrings, contains("8"));
