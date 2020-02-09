@@ -1,0 +1,16 @@
+---color switch statement in OrdersWriter--- 
+
+Codesmell: switch statement
+Solution: Replace Conditional with Polymorphism
+
+1. Nieuwe package gemaakt met abstract klasse: "Color". 
+2. Alle bestaande kleuren een eigen klasse gegeven met daar in 
+	String value van de kleur en een methode die dit terug geeft. 
+3. In Product de 'color' variabele van int naar Color veranderd.
+4. in OrdersWriter de methode 'getColor' verwijderd.
+5. Overal waar getColor werd aangeroepen staat nu 
+	product.getColor
+6. Unit tests aangepast door object van kleur te gebruiken ipv int
+
+---Zelfde voor size switch statement---
+---main method opgedeeld in meerdere append methoden---
