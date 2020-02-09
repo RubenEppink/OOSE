@@ -39,8 +39,7 @@ public class ListMaker {
 
         return allPersons.stream()
                 .filter(i -> i.isAdult()
-                        && i.getGender().equals(gender)
-                        && !i.equals(null))
+                        && i.getGender().equals(gender))
                 .collect(Collectors.toList());
     }
 
