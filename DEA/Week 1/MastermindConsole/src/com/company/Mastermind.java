@@ -3,6 +3,7 @@ package com.company;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 public class Mastermind {
@@ -23,9 +24,8 @@ public class Mastermind {
     }
 
     private void welkom() {
-        System.out.println("Welkom bij Mastermind. Probeer de juiste kleuren combinatie te raden" +
-                " door de eerste letter van je keuze door te geven in de console. ");
-        System.out.println("Je kan kiezen uit rood(r), groen(g), blauw(b), geel(y). " +
+        System.out.println("\nWelkom bij Mastermind. Probeer de juiste kleuren combinatie te raden" +
+                " door de eerste letter van je keuze door te geven in de console. \nJe kan kiezen uit rood(r), groen(g), blauw(b), geel(y). " +
                 "veel succes! ");
         speelSpel();
     }
@@ -35,13 +35,13 @@ public class Mastermind {
     }
 
     private int[] bepaalWinCombinatie() {
-        int[] p = new int[4];
+        int[] winCombinatie = new int[4];
         Random r = new Random();
 
-        for (int i = 0; i < p.length; i++) {
-            p[i] = r.nextInt(4);
+        for (int i = 0; i < winCombinatie.length; i++) {
+            winCombinatie[i] = r.nextInt(4);
         }
-        return p;
+        return winCombinatie;
     }
 
     private String[] spelerInvoer() {
