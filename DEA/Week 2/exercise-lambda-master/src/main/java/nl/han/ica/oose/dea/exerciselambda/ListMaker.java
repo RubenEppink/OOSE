@@ -33,6 +33,8 @@ public class ListMaker {
 
     private List<Person> createAdultList(List<Person> allPersons, Gender gender) {
 
+//Predicate<Person> p = i -> i.isAdult();
+
         if (allPersons == null) {
             return new ArrayList<>();
         }

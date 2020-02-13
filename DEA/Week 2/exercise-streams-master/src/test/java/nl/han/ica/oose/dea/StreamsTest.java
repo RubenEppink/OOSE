@@ -47,13 +47,14 @@ class StreamsTest {
     @Test
     void testFindShortestString() {
         // Setup
-        List<String> input = asList("Welcome", "to", "Java", "8", "Streams");
+        List<String> input = asList("Geeks", "for",
+                "GeeksQuiz", "GeeksforGeeks", "GFG");
 
         // Test
         String foundString = streams.findShortestString(input);
 
         // Verify
-        Assertions.assertEquals("8", foundString);
+        Assertions.assertEquals("for", foundString);
     }
 
     @Test
