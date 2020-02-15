@@ -3,51 +3,70 @@ package nl.han.dea.http;
 import java.io.*;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.time.format.DateTimeFormatter;
 
 public class ConnectionHandler implements Runnable {
-
-    private static final String HTTP_HEADER = "HTTP/1.1 200 OK\n" +
-            "Date: Mon, 27 Aug 2018 14:08:55 +0200\n" +
+    private String statusCode;
+    private String contentLength;
+    private final String HTTP_HEADER = "HTTP/1.1 " + "200" + " OK\n" +
+            DateTimeFormatter.ofPattern("EEE, dd MMM yyyy HH:mm:ss O") + " \n" +
             "HttpServer: Simple DEA Webserver\n" +
-            "Content-Length: 190\n" +
+            "Content-Length: " + contentLength + "\n" +
             "Content-Type: text/html\n";
-
     private Socket socket;
+
 
     public ConnectionHandler(Socket socket) {
         this.socket = socket;
-        handle();
     }
 
-    public void handle() {
+    public void handle() throws ResourceNotAvailableException {
         try {
             var inputStreamReader = new BufferedReader(
                     new InputStreamReader(socket.getInputStream(), StandardCharsets.US_ASCII));
             var outputStreamWriter = new BufferedWriter(
                     new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.US_ASCII));
 
-            parseRequest(inputStreamReader);
-            writeResponse(outputStreamWriter);
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            var startLine = parseRequest(inputStreamReader);
+
+            if (startLine == null) {
+                return;
+            }
+
+            String request = startLine.split(" ")[1];
+
+
+            writeResponse(outputStreamWriter, request);
+
+        } catch (IOException | ResourceNotAvailableException e) {
+            setStatusCode("404 NOT FOUND");
         }
     }
 
-    private void parseRequest(BufferedReader inputStreamReader) throws IOException {
+    private String parseRequest(BufferedReader inputStreamReader) throws IOException {
         var request = inputStreamReader.readLine();
+        String startLine = request;
 
         while (request != null && !request.isEmpty()) {
             System.out.println(request);
             request = inputStreamReader.readLine();
         }
+
+        return startLine;
     }
 
-    private void writeResponse(BufferedWriter outputStreamWriter) {
+    private void writeResponse(BufferedWriter outputStreamWriter, String request) throws ResourceNotAvailableException {
+        var pageReader = new HtmlPageReader(request);
+
+
+        setContentLength(pageReader.getLength());
+        setStatusCode("200 OK");
+
         try {
             outputStreamWriter.write(HTTP_HEADER);
             outputStreamWriter.newLine();
-            outputStreamWriter.write(new HtmlPageReader().readFile("index.html"));
+            outputStreamWriter.write(pageReader.readFile());
             outputStreamWriter.newLine();
             outputStreamWriter.flush();
         } catch (IOException e) {
@@ -58,7 +77,19 @@ public class ConnectionHandler implements Runnable {
 
     @Override
     public void run() {
-        handle();
+        try {
+            handle();
+        } catch (ResourceNotAvailableException e) {
 
+        }
+
+    }
+
+    public void setContentLength(String contentLength) {
+        this.contentLength = contentLength;
+    }
+
+    public void setStatusCode(String statusCode) {
+        this.statusCode = statusCode;
     }
 }
