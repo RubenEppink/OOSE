@@ -3,6 +3,7 @@ package nl.han.ica.oose.dea;
 
 import nl.han.ica.oose.dea.helpers.Product;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,9 +24,9 @@ class Streams {
     String findShortestString(List<String> input) {
        // return input.stream().sorted().findFirst().orElse(null);
 
+        return input.stream().min(Comparator.comparingInt(String::length)).get();
 
-
-        return input.stream().sorted((e2, e1) -> e1.length() > e2.length() ? -1 : 1).findFirst().get();
+       // return input.stream().sorted((e2, e1) -> e1.length() > e2.length() ? -1 : 1).findFirst().get();
 
 
       /*  return input.stream()

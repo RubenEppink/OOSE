@@ -10,14 +10,13 @@ public class PrimeTester implements Runnable {
 
     NumberUnderTest numberUnderTest;
     int highestNumberToTest;
-    ReentrantReadWriteLock lock = new ReentrantReadWriteLock(true);
 
     public PrimeTester(NumberUnderTest numberUnderTest, int highestNumberToTest) {
         this.numberUnderTest = numberUnderTest;
         this.highestNumberToTest = highestNumberToTest;
     }
 
-    private void startTesting() throws OuchIFoundThirtySevenAndHenceMustDieException {
+    public void startTesting() throws OuchIFoundThirtySevenAndHenceMustDieException {
 
         while (true) {
 

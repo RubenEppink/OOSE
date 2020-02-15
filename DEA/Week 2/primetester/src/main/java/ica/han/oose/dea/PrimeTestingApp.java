@@ -1,5 +1,7 @@
 package ica.han.oose.dea;
 
+import ica.han.oose.dea.exceptions.OuchIFoundThirtySevenAndHenceMustDieException;
+
 public class PrimeTestingApp {
 
     private static final int HIGHEST_NUMBER_TO_TEST = 2000;
@@ -12,15 +14,19 @@ public class PrimeTestingApp {
     private void startTesting() {
         var numberUnderTest = new NumberUnderTest();
 
-        var tester = new PrimeTester(numberUnderTest, HIGHEST_NUMBER_TO_TEST);
-        var tester1 = new PrimeTester(numberUnderTest, HIGHEST_NUMBER_TO_TEST);
-        var tester2 = new PrimeTester(numberUnderTest, HIGHEST_NUMBER_TO_TEST);
-        var tester3 = new PrimeTester(numberUnderTest, HIGHEST_NUMBER_TO_TEST);
+        Runnable run = () -> {
+            try {
+                new PrimeTester(numberUnderTest, HIGHEST_NUMBER_TO_TEST).startTesting();
+            } catch (OuchIFoundThirtySevenAndHenceMustDieException e) {
+                e.printStackTrace();
+            }
+        };
 
-        Thread t1 = new Thread(tester, "1");
-        Thread t2 = new Thread(tester1, "2");
-        Thread t3 = new Thread(tester2, "3");
-        Thread t4 = new Thread(tester3, "4");
+
+        Thread t1 = new Thread(run, "1");
+        Thread t2 = new Thread(run, "2");
+        Thread t3 = new Thread(run, "3");
+        Thread t4 = new Thread(run, "4");
 
         t1.start();
         t2.start();
