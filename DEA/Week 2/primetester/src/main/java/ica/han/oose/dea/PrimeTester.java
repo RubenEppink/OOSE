@@ -45,7 +45,7 @@ public class PrimeTester implements Runnable {
         try {
             startTesting();
         } catch (OuchIFoundThirtySevenAndHenceMustDieException e) {
-            System.out.println(Thread.currentThread().getName() + " found thirty seven and must die");
+            //hier komt de logica om je programma in een goede staat verder te laten draaien. Vaak is dit ook gewoon niks.
         }
     }
 }

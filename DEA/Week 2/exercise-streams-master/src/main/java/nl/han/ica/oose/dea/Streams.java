@@ -3,6 +3,7 @@ package nl.han.ica.oose.dea;
 
 import nl.han.ica.oose.dea.helpers.Product;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,6 +11,11 @@ import java.util.stream.Collectors;
 class Streams {
 
     List<String> filterStringsLongerThanThreeCharacters(List<String> input) {
+        String[] nummersAlsString = {"1", "2", "3", "4", "5", "6"};
+
+        List<Integer> nummerLijst = Arrays.stream(nummersAlsString)
+                .map(woord -> Integer.parseInt(woord)).collect(Collectors.toList());
+
         return input.stream()
                 .filter(i -> i.length() < 3)
                 .collect(Collectors.toList());
