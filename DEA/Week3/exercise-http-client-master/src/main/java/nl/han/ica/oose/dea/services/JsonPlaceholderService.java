@@ -67,9 +67,7 @@ public class JsonPlaceholderService {
                             httpClient.sendAsync(postRequest, HttpResponse.BodyHandlers.ofString())
                                     .thenApply(HttpResponse::body)
                                     .thenAccept(callback);
-
                         }
-
                 );
     }
 
