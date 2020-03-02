@@ -4,6 +4,7 @@ import nl.han.oose.dea.rest.services.dto.ItemDTO;
 
 import java.util.List;
 
+
 public interface ItemService {
 
     List getAll();

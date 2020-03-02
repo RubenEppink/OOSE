@@ -4,17 +4,21 @@ import nl.han.oose.dea.rest.resources.ItemResource;
 import nl.han.oose.dea.rest.services.HardcodedItemService;
 import nl.han.oose.dea.rest.services.ItemService;
 import nl.han.oose.dea.rest.services.dto.ItemDTO;
+import nl.han.oose.dea.rest.services.exceptions.IdAlreadyInUseException;
+import nl.han.oose.dea.rest.services.exceptions.ItemNotAvailableException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.verify;
 
 class ItemResourceTest {
 
@@ -69,48 +73,122 @@ class ItemResourceTest {
         //Assert
         Assertions.assertEquals(itemsToReturn, response.getEntity());
         Assertions.assertEquals(response.getStatus(), HTTP_OK);
-
-
     }
 
     @Test
-    void addItemsAddsItem() {
+    void addItemsCallsAddItem() {
         // Arrange
         ItemDTO item = new ItemDTO(37, "Chocolate spread", new String[]{"Breakfast, Lunch"}, "Not to much");
         // Act
-        var response = sut.addItem(item);
+        sut.addItem(item);
+
+        // Assert
+        Mockito.verify(mockedItemService).addItem(item);
+    }
+
+    @Test
+    void addItemsResponseStatusTest() {
+        // Arrange
+        ItemDTO item = new ItemDTO(37, "Chocolate spread", new String[]{"Breakfast, Lunch"}, "Not to much");
+        // Act
+        Response response = sut.addItem(item);
 
         // Assert
         Assertions.assertEquals(HTTP_CREATED, response.getStatus());
     }
 
     @Test
-    void getItemGetsCorrectItem() {
+    void addItemsThrowsException() {
+        // Arrange
+        ItemDTO item = new ItemDTO(1, "Chocolate spread", new String[]{"Breakfast, Lunch"}, "Not to much");
+        doThrow(IdAlreadyInUseException.class).when(mockedItemService).addItem(item);
+        // Act
+
+        // Assert
+        assertThrows(IdAlreadyInUseException.class, () -> {
+            sut.addItem(item);
+        });
+    }
+
+    @Test
+    void getItemCallsGetItem() {
         // Arrange
 
         // Act
         var response = sut.getItem(ITEM_ID);
 
         // Assert
-        Assertions.assertEquals(HTTP_OK, response.getStatus());
-        Assertions.assertTrue(response.getEntity() instanceof ItemDTO);
-
-        if (response.getEntity() instanceof ItemDTO) {
-            var item = (ItemDTO) response.getEntity();
-            assertEquals(ITEM_ID, item.getId());
-        } else {
-            assertFalse(false);
-        }
+        Mockito.verify(mockedItemService).getItem(ITEM_ID);
     }
 
     @Test
-    void deleteItemDeletesItem() {
+    void getItemWithId() {
+        // Arrange
+        var item = new ItemDTO(ITEM_ID, "Chocolate spread", new String[]{"Breakfast, Lunch"}, "Not to much");
+        Mockito.when(mockedItemService.getItem(ITEM_ID)).thenReturn(item);
+
+        // Act
+        Response response = sut.getItem(ITEM_ID);
+
+        // Assert
+        assertEquals(item, response.getEntity());
+    }
+
+    @Test
+    void getItemThrowsException() {
+
+
+        doThrow(ItemNotAvailableException.class).when(mockedItemService).getItem(9);
+        // Act
+
+        // Assert
+        assertThrows(ItemNotAvailableException.class, () -> {
+            sut.getItem(9);
+        });
+    }
+
+    @Test
+    void getItemReturnsHttp200() {
+        // Arrange
+        var item = new ItemDTO(ITEM_ID, "Chocolate spread", new String[]{"Breakfast, Lunch"}, "Not to much");
+        Mockito.when(mockedItemService.getItem(ITEM_ID)).thenReturn(item);
+
+        // Act
+        Response response = sut.getItem(ITEM_ID);
+
+        // Assert
+        assertEquals(HTTP_OK, response.getStatus());
+    }
+
+
+    @Test
+    void deleteItemCallsDeleteItemOnService() {
+        // Arrange
+
+        // Act
+        sut.deleteItem(ITEM_ID);
+
+        // Assert
+        verify(mockedItemService).deleteItem(ITEM_ID);
+    }
+
+    @Test
+    void deleteItemsReturnsHttp200() {
         // Arrange
 
         // Act
         var response = sut.deleteItem(ITEM_ID);
 
         // Assert
-        Assertions.assertEquals(HTTP_OK, response.getStatus());
+        assertEquals(HTTP_OK, response.getStatus());
+    }
+
+    @Test
+    void deleteItemLetsItemNotAvailableExceptionPass() {
+        // Arrange
+        doThrow(ItemNotAvailableException.class).when(mockedItemService).deleteItem(ITEM_ID);
+
+        // Act & Assert
+        assertThrows(ItemNotAvailableException.class, () -> sut.deleteItem(ITEM_ID));
     }
 }
