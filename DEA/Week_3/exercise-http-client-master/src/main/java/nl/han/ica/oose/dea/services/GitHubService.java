@@ -31,10 +31,8 @@ public class GitHubService {
 
         try {
             response =  client.send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
         }
 
         return response.body();
