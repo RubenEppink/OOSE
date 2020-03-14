@@ -1,0 +1,49 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="spotitube:war exploded">
+    <output-path>$PROJECT_DIR$/target/spotitube</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>spotitube</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="spotitube" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.mockito:mockito-core:3.3.0" />
+          <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.10.5" />
+          <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy-agent:1.10.5" />
+          <element id="library" level="project" name="Maven: org.objenesis:objenesis:2.6" />
+          <element id="library" level="project" name="Maven: com.airhacks:jaxrs-cors:0.0.2" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.19" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-common:2.22.2" />
+          <element id="library" level="project" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0.1" />
+          <element id="library" level="project" name="Maven: javax.annotation:javax.annotation-api:1.2" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.bundles.repackaged:jersey-guava:2.22.2" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:hk2-api:2.4.0-b34" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:hk2-utils:2.4.0-b34" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b34" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2.external:javax.inject:2.4.0-b34" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:hk2-locator:2.4.0-b34" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.18.1-GA" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.1" />
+          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.4.0" />
+          <element id="library" level="project" name="Maven: org.apiguardian:apiguardian-api:1.0.0" />
+          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-engine:1.4.0" />
+          <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.1.1" />
+          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.4.0" />
+          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.4.0" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/spotitube/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="spotitube/web/Web" />
+    </root>
+  </artifact>
+</component>

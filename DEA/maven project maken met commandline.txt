@@ -1,4 +1,4 @@
-mvn archetype:generate -DgroupId=ica.han.oose.dea -DarchetypeGroupId=com.airhacks -DartifactId=workshop-simply-the-rest -DarchetypeArtifactId=javaee8-essentials-archetype -DarchetypeVersion=0.0.1 -DinteractiveMode=false
+mvn archetype:generate -DgroupId=ica.han.oose.dea -DarchetypeGroupId=com.airhacks -DartifactId=spotitube -DarchetypeArtifactId=javaee8-essentials-archetype -DarchetypeVersion=0.0.1 -DinteractiveMode=false
 
 
 

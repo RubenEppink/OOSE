@@ -1,0 +1,48 @@
+vagado/kennisquiz
+
+registratie
+	-gebruikersnaam
+	-wachtwoord
+
+startsaldo
+	
+munten
+
+vragenlijsten
+ 
+
+thema
+	-naam?
+
+meerkeuzevraag(één antwoord)
+
+openvraag(meerdere antwoorden mogelijk)
+	
+vraag(hoort bij één vragenlijst)
+
+onderwerpen(voetbal, binnen thema sport)
+
+quiz
+	-tijd
+
+antwoord
+	-goed of fout?
+
+punten
+
+speler
+
+lifetime best
+
+beheerder
+
+vagadoshop 
+
+aankoopbedrag
+
+gebruiksperiode vragenlijst
+
+
+
+
+
